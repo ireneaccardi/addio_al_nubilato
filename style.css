@@ -82,6 +82,8 @@ button.secondary{width:100%;margin-top:8px;color:#fff8e7;background:linear-gradi
   text-align:center;
 }
 .cell:hover{filter:brightness(1.07);box-shadow:inset 0 0 0 1px rgba(255,255,255,.4),0 0 0 3px rgba(79,142,76,.35);z-index:2}
+.cell.locked{cursor:default}
+.cell.locked:hover{filter:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.4);z-index:auto}
 .cell.current{border-color:#4f8e4c;box-shadow:inset 0 0 0 3px #4f8e4c,0 0 0 4px rgba(127,185,86,.4);z-index:3}
 .cell.completed{opacity:.5;filter:saturate(.6)}
 .cell.special-question{background:radial-gradient(120% 140% at 30% 12%,#ecfaff 0%,#bfe6ee 60%,#9fd3e0 100%)}
