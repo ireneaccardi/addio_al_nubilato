@@ -90,13 +90,9 @@ button.secondary{width:100%;margin-top:8px;color:#fff8e7;background:linear-gradi
 .cell.special-dress{background:radial-gradient(120% 140% at 30% 12%,#fff0f4 0%,#f2bece 60%,#e9a1b7 100%)}
 .num-plain{font:800 1.5rem Georgia,serif;color:#6b5a3a;opacity:.55}
 .num-badge{position:absolute;top:7px;left:9px;font:800 .62rem sans-serif;color:#6b5a3a;opacity:.6}
-.icon-badge{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;background:linear-gradient(145deg,#bcbcbc,#8f8f8f);box-shadow:0 3px 6px rgba(30,40,20,.35),inset 0 0 0 2px rgba(255,255,255,.55);color:#fff}
-.cell.special-question .icon-badge{background:linear-gradient(145deg,#8ed3e2,#4fa3b8)}
-.cell.special-challenge .icon-badge{background:linear-gradient(145deg,#f2ce7e,#d7a83f)}
-.cell.special-truth .icon-badge{background:linear-gradient(145deg,#b3a1c9,#7d6b93)}
-.cell.special-dress .icon-badge{background:linear-gradient(145deg,#eeb1c1,#d97991)}
+.icon-badge{width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:22px;background:none;box-shadow:none}
+.cell.special-question .icon-badge,.cell.special-challenge .icon-badge,.cell.special-truth .icon-badge,.cell.special-dress .icon-badge,.cell.special-arrivo .icon-badge{background:none}
 .cell.special-arrivo{background:radial-gradient(120% 140% at 30% 12%,#fff6de 0%,#f3d788 60%,#e2b559 100%)}
-.cell.special-arrivo .icon-badge{background:linear-gradient(145deg,#f6d98a,#c98f2b)}
 .cell-name{font:800 .54rem/1.15 sans-serif;letter-spacing:.03em;color:#5a4a2f;text-transform:uppercase;max-width:92%}
 .pawn{position:absolute;right:-6px;top:-20px;font-size:31px;filter:drop-shadow(0 3px 2px #334)}
 @keyframes bounce{to{transform:translateY(-4px) rotate(3deg)}}
@@ -113,4 +109,4 @@ button.secondary{width:100%;margin-top:8px;color:#fff8e7;background:linear-gradi
 .help-list{text-align:left;font-size:1rem;line-height:1.7;opacity:.85;padding-left:22px}
 .help-list li{margin:5px 0}
 @media(max-width:1000px){.game{grid-template-columns:1fr}.panel{grid-template-columns:repeat(2,1fr)}.legend{grid-column:span 1}.board{min-height:760px;padding:42px 32px 32px}}
-@media(max-width:650px){.panel{grid-template-columns:1fr}.board{min-height:720px;padding:32px 10px 22px}.cell-name{font-size:.48rem}.num-plain{font-size:1.1rem}.num-badge{font-size:.5rem}.icon-badge{width:26px;height:26px;font-size:12px}.pawn{font-size:25px}}
+@media(max-width:650px){.panel{grid-template-columns:1fr}.board{min-height:720px;padding:32px 10px 22px}.cell-name{font-size:.48rem}.num-plain{font-size:1.1rem}.num-badge{font-size:.5rem}.icon-badge{width:22px;height:22px;font-size:16px}.pawn{font-size:25px}}
