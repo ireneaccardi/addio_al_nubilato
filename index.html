@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>L'avventura di Paola — Addio al Nubilato</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+  <header class="hero">
+    <div class="sign">
+      <div class="eyebrow">ADDIO AL NUBILATO</div>
+      <h1>L'avventura di Paola</h1>
+      <div class="wreath">🌿💐🌸💐🌿</div>
+    </div>
+    <div class="ribbon">Il percorso della sposa</div>
+    <p class="note">Completa tutte le prove e raggiungi l'arrivo, per rendere questa giornata indimenticabile! 🌿💍</p>
+  </header>
+
+  <section class="game">
+    <aside class="panel">
+      <div class="card progress-card">
+        <div class="card-ribbon">LA TUA AVVENTURA</div>
+        <div class="stat-label">PROVE COMPLETATE</div>
+        <strong id="progressText" class="stat-value">0 / 54</strong>
+        <div class="progress"><span id="progressBar"></span></div>
+        <div class="stat-label" style="margin-top:10px">POSIZIONE ATTUALE</div>
+        <div class="stat-value" id="positionText">1</div>
+      </div>
+
+      <div class="card dice-card">
+        <div class="card-ribbon">TOCCA A TE</div>
+        <div class="dice-frame"><div id="dice" class="dice">🎲</div></div>
+        <button id="rollBtn">LANCIA IL DADO</button>
+        <button id="restartBtn2" class="secondary">↻ RICOMINCIA</button>
+        <p id="status">Pronta? Inizia il percorso!</p>
+      </div>
+
+      <div class="card legend">
+        <h3>Legenda</h3>
+        <div><span class="dot dot-question"></span> <b>Domanda sulla sposa</b></div>
+        <div><span class="dot dot-challenge"></span> <b>Sfida divertente</b></div>
+        <div><span class="dot dot-truth"></span> <b>Obbligo o verità</b></div>
+        <div><span class="dot dot-dress"></span> <b>Vesti la sposa</b></div>
+      </div>
+
+      <div class="card wood-note">
+        <p>Ogni casella è una nuova avventura! Divertitevi e create ricordi indimenticabili. 💚</p>
+      </div>
+    </aside>
+
+    <section class="board-wrap">
+      <div class="board" id="board" aria-label="Percorso nel bosco"></div>
+      <div class="path-tag start-tag">START</div>
+      <div class="path-tag finish-tag">🏆 ARRIVO</div>
+    </section>
+  </section>
+
+  <button id="helpBtn" class="help-btn">❓ COME GIOCARE</button>
+</main>
+
+<div id="modal" class="modal hidden">
+  <div class="modal-box">
+    <button id="closeModal" class="close">×</button>
+    <div id="modalIcon" class="modal-icon">✨</div>
+    <div id="modalType" class="modal-type"></div>
+    <h2 id="modalTitle"></h2>
+    <p id="modalText"></p>
+    <button id="completeBtn" class="primary">PROVA COMPLETATA ✓</button>
+  </div>
+</div>
+
+<div id="win" class="modal hidden">
+  <div class="modal-box">
+    <div class="modal-icon">🥂</div>
+    <div class="modal-type">ARRIVO!</div>
+    <h2>Avete completato il percorso! 💍</h2>
+    <p>La sposa è arrivata al traguardo. Ora si festeggia! 🌿🥂</p>
+    <button id="restartBtn" class="primary">RICOMINCIA</button>
+  </div>
+</div>
+
+<div id="helpModal" class="modal hidden">
+  <div class="modal-box">
+    <button id="closeHelp" class="close">×</button>
+    <div class="modal-icon">🌲</div>
+    <div class="modal-type">COME SI GIOCA</div>
+    <h2>Il percorso della sposa</h2>
+    <ol class="help-list">
+      <li>Lancia il dado.</li>
+      <li>La sposa avanza lungo il sentiero.</li>
+      <li>Completa la prova della casella.</li>
+      <li>Arriva alla casella 54 e completa tutto!</li>
+    </ol>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
