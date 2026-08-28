@@ -19,13 +19,10 @@ header.hero .note{max-width:480px;margin:16px auto 0;background:rgba(255,252,239
 .progress{height:10px;background:#dfe8d9;border-radius:20px;overflow:hidden;margin:6px 0 4px}
 .progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#5c934d,#a6bf67);transition:width .35s}
 .dice-card{text-align:center}
-.dice-frame{width:110px;height:110px;margin:4px auto 14px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--wood),var(--wood-dark) 75%);display:grid;place-items:center;box-shadow:0 10px 22px rgba(30,20,10,.4),inset 0 0 0 6px rgba(255,255,255,.06),inset 0 0 0 9px rgba(0,0,0,.25)}
-.dice{font-size:44px;line-height:1;margin:0;background:#fff;width:72px;height:72px;border-radius:16px;display:grid;place-items:center;box-shadow:0 6px 12px rgba(0,0,0,.25)}
-.dice.roll{animation:roll .55s ease}
-@keyframes roll{50%{transform:rotate(250deg) scale(1.16)}100%{transform:rotate(360deg)}}
+.path-icon{font-size:44px;margin:6px 0 12px;opacity:.85}
 button{font:800 .9rem/1 var(--sans);border:0;border-radius:11px;padding:12px 15px;cursor:pointer}
-#rollBtn,.primary{width:100%;color:white;background:linear-gradient(135deg,#4d884b,#2c6035);box-shadow:0 7px 15px #315f3633}
-#rollBtn:disabled{opacity:.55;cursor:not-allowed}
+#nextBtn,.primary{width:100%;color:white;background:linear-gradient(135deg,#4d884b,#2c6035);box-shadow:0 7px 15px #315f3633}
+#nextBtn:disabled{opacity:.55;cursor:not-allowed}
 button.secondary{width:100%;margin-top:8px;color:#fff8e7;background:linear-gradient(135deg,#8a6a3e,var(--wood-dark));box-shadow:0 6px 14px rgba(60,40,10,.3)}
 .help-btn{display:block;margin:26px auto 0;color:#fff;font:800 .82rem/1 var(--sans);letter-spacing:.04em;background:linear-gradient(135deg,#4d884b,#2c6035);padding:13px 30px;border-radius:30px;box-shadow:0 8px 18px rgba(30,60,25,.3)}
 #status{min-height:25px;font-size:.85rem;opacity:.7;margin:10px 0 0}
@@ -35,7 +32,7 @@ button.secondary{width:100%;margin-top:8px;color:#fff8e7;background:linear-gradi
 .dot{width:20px;height:20px;border-radius:50%;flex:0 0 auto;box-shadow:0 2px 5px rgba(0,0,0,.25),inset 0 0 0 2px rgba(255,255,255,.5)}
 .dot-question{background:linear-gradient(145deg,#8ed3e2,#4fa3b8)}
 .dot-challenge{background:linear-gradient(145deg,#f2ce7e,#d7a83f)}
-.dot-truth{background:linear-gradient(145deg,#b3a1c9,#7d6b93)}
+.dot-choice{background:linear-gradient(145deg,#9adf9e,#4caf50)}
 .dot-dress{background:linear-gradient(145deg,#eeb1c1,#d97991)}
 .wood-note{background:linear-gradient(160deg,var(--wood),var(--wood-dark));color:#f3e6c8;text-align:center;font-size:.85rem;padding:16px}
 .wood-note p{margin:0}
@@ -88,13 +85,14 @@ button.secondary{width:100%;margin-top:8px;color:#fff8e7;background:linear-gradi
 .cell.completed{opacity:.5;filter:saturate(.6)}
 .cell.special-question{background:radial-gradient(120% 140% at 30% 12%,#ecfaff 0%,#bfe6ee 60%,#9fd3e0 100%)}
 .cell.special-challenge{background:radial-gradient(120% 140% at 30% 12%,#fff8e2 0%,#f5d888 60%,#eec766 100%)}
-.cell.special-truth{background:radial-gradient(120% 140% at 30% 12%,#f5f0fa 0%,#cdbde0 60%,#b7a2cf 100%)}
+.cell.special-choice{background:radial-gradient(120% 140% at 30% 12%,#f2fbf1 0%,#c9edc9 60%,#9fdda2 100%)}
 .cell.special-dress{background:radial-gradient(120% 140% at 30% 12%,#fff0f4 0%,#f2bece 60%,#e9a1b7 100%)}
 .num-plain{font:800 1.5rem Georgia,serif;color:#6b5a3a;opacity:.55}
 .num-badge{position:absolute;top:7px;left:9px;font:800 .62rem sans-serif;color:#6b5a3a;opacity:.6}
 .icon-badge{width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:22px;background:none;box-shadow:none}
-.cell.special-question .icon-badge,.cell.special-challenge .icon-badge,.cell.special-truth .icon-badge,.cell.special-dress .icon-badge,.cell.special-arrivo .icon-badge{background:none}
+.cell.special-question .icon-badge,.cell.special-challenge .icon-badge,.cell.special-choice .icon-badge,.cell.special-dress .icon-badge,.cell.special-arrivo .icon-badge,.cell.special-partenza .icon-badge{background:none}
 .cell.special-arrivo{background:radial-gradient(120% 140% at 30% 12%,#fff6de 0%,#f3d788 60%,#e2b559 100%)}
+.cell.special-partenza{background:radial-gradient(120% 140% at 30% 12%,#fff6de 0%,#f3d788 60%,#e2b559 100%)}
 .cell-name{font:800 .54rem/1.15 sans-serif;letter-spacing:.03em;color:#5a4a2f;text-transform:uppercase;max-width:92%}
 .pawn{position:absolute;right:-6px;top:-20px;font-size:31px;filter:drop-shadow(0 3px 2px #334)}
 @keyframes bounce{to{transform:translateY(-4px) rotate(3deg)}}
@@ -110,5 +108,18 @@ button.secondary{width:100%;margin-top:8px;color:#fff8e7;background:linear-gradi
 .primary{margin-top:8px}
 .help-list{text-align:left;font-size:1rem;line-height:1.7;opacity:.85;padding-left:22px}
 .help-list li{margin:5px 0}
+.modal-extra{margin:12px 0}
+.choice-row{display:flex;gap:10px}
+.choice-btn{flex:1;color:#fff;padding:15px 10px;border-radius:14px;font:800 .88rem/1 var(--sans);box-shadow:0 8px 16px rgba(20,20,10,.25)}
+.choice-obbligo{background:linear-gradient(135deg,#9adf9e,#4caf50)}   /* prima: #a7ddce,#3f9683 */
+.choice-verita{background:linear-gradient(135deg,#8ed3e2,#4fa3b8)}
+.todo-item{display:flex;align-items:flex-start;gap:10px;text-align:left;background:rgba(0,0,0,.04);border-radius:10px;padding:11px 13px;margin:8px 0;font-size:.92rem}
+.todo-item input{margin-top:3px;width:18px;height:18px;flex:0 0 auto;accent-color:#2f6636}
+.todo-item span{flex:1}
+.todo-remove{flex:0 0 auto;background:none;color:#a34848;font-size:1rem;line-height:1;padding:2px 8px;border-radius:8px}
+.todo-remove:hover{background:rgba(163,72,72,.12)}
+.todo-add-row{display:flex;gap:8px;margin-top:6px}
+.todo-input{flex:1;padding:10px 12px;border-radius:10px;border:2px solid #d4dfc9;font:600 .88rem var(--sans);background:#fff}
+.todo-add-btn{background:linear-gradient(135deg,#4d884b,#2c6035);color:#fff;padding:10px 16px;border-radius:10px;font-size:1.1rem;line-height:1}
 @media(max-width:1000px){.game{grid-template-columns:1fr}.panel{grid-template-columns:repeat(2,1fr)}.legend{grid-column:span 1}.board{min-height:760px;padding:42px 32px 32px}}
 @media(max-width:650px){.panel{grid-template-columns:1fr}.board{min-height:720px;padding:32px 10px 22px}.cell-name{font-size:.48rem}.num-plain{font-size:1.1rem}.num-badge{font-size:.5rem}.icon-badge{width:22px;height:22px;font-size:16px}.pawn{font-size:25px}}

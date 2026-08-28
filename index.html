@@ -18,44 +18,44 @@
       <div class="wreath">🌿💐🌸💐🌿</div>
     </div>
     <div class="ribbon">Il percorso della sposa</div>
-    <p class="note">Completa tutte le prove e raggiungi l'arrivo, per rendere questa giornata indimenticabile! 🌿💍</p>
+    <p class="note">Completa tutte le prove e raggiungi l'arrivo, per rendere questo weekend indimenticabile! 🌿💍</p>
   </header>
 
   <section class="game">
     <aside class="panel">
-      <!-- <div class="card progress-card">
+      <div class="card progress-card">
         <div class="card-ribbon">LA TUA AVVENTURA</div>
         <div class="stat-label">PROVE COMPLETATE</div>
         <strong id="progressText" class="stat-value">0 / 54</strong>
         <div class="progress"><span id="progressBar"></span></div>
         <div class="stat-label" style="margin-top:10px">POSIZIONE ATTUALE</div>
         <div class="stat-value" id="positionText">1</div>
-      </div> -->
+      </div>
 
       <div class="card dice-card">
         <div class="card-ribbon">TOCCA A TE</div>
-        <div class="dice-frame"><div id="dice" class="dice">🎲</div></div>
-        <button id="rollBtn">LANCIA IL DADO</button>
+        <div class="path-icon">🏃🏻‍♀️</div>
+        <button id="nextBtn">AVANTI ➜</button>
         <button id="restartBtn2" class="secondary">↻ RICOMINCIA</button>
         <p id="status">Pronta? Inizia il percorso!</p>
       </div>
 
       <div class="card legend">
         <h3>Legenda</h3>
-        <div><span class="dot dot-question"></span> <b>Domanda sulla sposa</b></div>
+        <div><span class="dot dot-question"></span> <b>Domanda alla sposa</b></div>
         <div><span class="dot dot-challenge"></span> <b>Sfida divertente</b></div>
-        <div><span class="dot dot-truth"></span> <b>Obbligo o verità</b></div>
-        <div><span class="dot dot-dress"></span> <b>Vesti la sposa</b></div>
+        <div><span class="dot dot-choice"></span> <b>Scelta da compiere</b></div>
+        <div><span class="dot dot-dress"></span> <b>Vestito/accessorio da indossare</b></div>
       </div>
 
       <div class="card wood-note">
-        <p>Ogni casella è una nuova avventura! Divertitevi e create ricordi indimenticabili. 💚</p>
+        <p>Ogni casella è una sfida! Divertiti e crea ricordi indimenticabili. 💚</p>
       </div>
     </aside>
 
     <section class="board-wrap">
       <div class="board" id="board" aria-label="Percorso nel bosco"></div>
-      <div class="path-tag start-tag">START</div>
+      <div class="path-tag start-tag">PARTENZA</div>
       <div class="path-tag finish-tag">🏆 ARRIVO</div>
     </section>
   </section>
@@ -70,6 +70,7 @@
     <div id="modalType" class="modal-type"></div>
     <h2 id="modalTitle"></h2>
     <p id="modalText"></p>
+    <div id="modalExtra" class="modal-extra"></div>
     <button id="completeBtn" class="primary">PROVA COMPLETATA ✓</button>
   </div>
 </div>
@@ -91,9 +92,9 @@
     <div class="modal-type">COME SI GIOCA</div>
     <h2>Il percorso della sposa</h2>
     <ol class="help-list">
-      <li>Lancia il dado.</li>
-      <li>La sposa avanza lungo il sentiero.</li>
-      <li>Completa la prova della casella.</li>
+      <li>Clicca sulla casella dove si trova la sposa per aprire la prova.</li>
+      <li>Completala e premi "PROVA COMPLETATA".</li>
+      <li>Premi "AVANTI ➜" per muovere la sposa alla casella successiva.</li>
       <li>Arriva alla casella 54 e completa tutto!</li>
     </ol>
   </div>
